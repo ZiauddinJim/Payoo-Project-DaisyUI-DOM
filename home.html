@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- tailwind & DaisyUI Connect -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- CSS Connect -->
+  <link rel="stylesheet" href="./styles/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#F4F5F7] min-h-[100vh] mx-auto outfit-font">
+  <section class="max-w-md mx-auto">
+    <!-- top Season -->
+    <!-- Top bar -->
+    <div class="flex justify-between pt-5 pb-3 px-6 border-b border-b-gray-300 bg-white">
+      <div class="flex">
+        <img src="./assets/Group.png" alt="Logo" class="max-w-12 max-h-11">
+        <div class="ml-2">
+          <p class="font-extrabold text-sm mb-1">$<span id="available-balance">45000</span></p>
+          <p class="text-gray-500">Available Balance</p>
+        </div>
+      </div>
+      <button class="btn text-gray-500 rounded-lg"><i
+          class="fa-solid fa-arrow-right-from-bracket rotate-180 text-[#666768]"></i>Log
+        Out</button>
+    </div>
+    <!-- Card season -->
+    <div class=" bg-white rounded-b-xl p-6">
+      <!-- Welcome note -->
+      <div class="mb-6">
+        <p class="text-2xl font-bold mb-3">🔥 Welcome to Payooo!</p>
+        <p class="text-gray-500">Enjoy easy and convenient financial services with us. Cashout charge is low and</p>
+      </div>
+      <!-- Card Design -->
+      <div class=" grid grid-cols-3 gap-3">
+        <div id="add-money" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+          <img src="./assets/wallet1.png" alt="Icon" class="mx-auto mb-2">
+          <p id="add-money-text" class="text-gray-600 text-[14px]">Add Money</p>
+        </div>
+        <div id="cash-out" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+          <img src="./assets/send1.png" alt="Icon" class="mx-auto mb-2">
+          <p id="cash-out-text" class="text-gray-600 text-[14px]">Cashout</p>
+        </div>
+        <div id="transfer-money" class="text-center border-1 border-gray-400 rounded-xl py-5 px-1">
+          <img src="./assets/money1.png" alt="Icon" class="mx-auto mb-2">
+          <p id="transfer-money-text" class="text-gray-600 text-[14px]">Transfer Money</p>
+        </div>
+        <div id="get-bonus" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+          <img src="./assets/bonus1.png" alt="Icon" class="mx-auto mb-2">
+          <p class="text-gray-600 text-[14px]">Get Bonus</p>
+        </div>
+        <div id="pay-bill" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+          <img src="./assets/purse1.png" alt="Icon" class="mx-auto mb-2">
+          <p class="text-gray-600 text-[14px]">Pay Bill</p>
+        </div>
+        <div id="transaction-history" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+          <img src="./assets/transaction1.png" alt="Icon" class="mx-auto mb-2">
+          <p class="text-gray-600 text-[14px]">Transactions</p>
+        </div>
+      </div>
+    </div>
+    <!-- bottom season -->
+    <div>
+      <!-- Latest Payment -->
+      <div id="latest-payment-parent" class="p-6">
+        <p class="font-semibold mb-3">latest Payment</p>
+        <div class="bg-white p-6 rounded-2xl">
+          <!-- <div>
+            <div>
+              <label class="text-black opacity-70">Select A Bank</label>
+              <select id="bank" class="select rounded-full mb-4 mt-2 w-full bg-[#f4f5f7] text-gray-500"
+                onchange="this.classList.remove('text-gray-500'); this.classList.add('text-black');">
+                <option disabled selected class="">Select Bank</option>
+                <option>AB Bank</option>
+                <option>Dhaka Bank</option>
+                <option>City Bank</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-black opacity-70">Bank Account Number</label>
+              <input id="account-number" type="text" placeholder="Enter 11 digit account number"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Amount to Add</label>
+              <input id="amount-add" type="text" placeholder="Add Amount to withdraw"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Pin Number</label>
+              <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
+                class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Add Money
+            </button>
+          </div> -->
+        </div>
+      </div>
+      <!-- Add money -->
+      <div id="add-money-parent" class="p-6 hidden">
+        <p class="font-semibold mb-3">Add Money</p>
+        <div class="bg-white p-6 rounded-2xl">
+          <div>
+            <div>
+              <label class="text-black opacity-70">Select A Bank</label>
+              <select id="bank" class="select rounded-full mb-4 mt-2 w-full bg-[#f4f5f7] text-gray-500"
+                onchange="this.classList.remove('text-gray-500'); this.classList.add('text-black');">
+                <option disabled selected class="">Select Bank</option>
+                <option>AB Bank</option>
+                <option>Dhaka Bank</option>
+                <option>City Bank</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-black opacity-70">Bank Account Number</label>
+              <input id="account-number" type="text" placeholder="Enter 11 digit account number"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Amount to Add</label>
+              <input id="amount-add" type="text" placeholder="Add Amount to withdraw"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>Select A Bank
+              <label class="">Pin Number</label>
+              <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
+                class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Add Money
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Cash Out -->
+      <div id="cash-out-parent" class="p-6 hidden">
+        <p class="font-semibold mb-3">Cash Out</p>
+        <div class="bg-white p-6 rounded-2xl">
+          <div>
+            <label class="text-black opacity-70">Agent Number</label>
+            <input id="account-number" type="text" placeholder="Enter 11 digit number"
+              class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+          </div>
+          <div>
+            <label class="">Amount</label>
+            <input id="amount-add" type="text" placeholder="Enter Amount to withdraw"
+              class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+          </div>
+          <div>
+            <label class="">Pin Number</label>
+            <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
+              class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+          </div>
+          <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Withdraw Money
+          </button>
+        </div>
+      </div>
+      <!-- Transfer Money -->
+      <div id="transfer-money-parent" class="p-6 hidden">
+        <p class="font-semibold mb-3">Transfer Money</p>
+        <div class="bg-white p-6 rounded-2xl">
+          <div>
+            <div>
+              <label class="text-black opacity-70">User Account Number</label>
+              <input id="account-number" type="text" placeholder="Enter 11 digit number"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Amount</label>
+              <input id="amount-add" type="text" placeholder="Enter Amount to transfer"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Pin Number</label>
+              <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
+                class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Send Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Get Bonus -->
+      <div id="get-bonus-parent" class="p-6 hidden">
+        <p class="font-semibold mb-3">Get Bonus</p>
+        <div class="bg-white p-6 rounded-2xl">
+          <div>
+            <div>
+              <label class="">Enter bonus coupon</label>
+              <input type="text" placeholder="Enter your coupon"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Get Bonus
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Pay Bill -->
+      <div id="pay-bill-parent" class="p-6 hidden">
+        <p class="font-semibold mb-3">Pay Bill</p>
+        <div class="bg-white p-6 rounded-2xl">
+          <div>
+            <div>
+              <label class="text-black opacity-70">Select To Pay</label>
+              <select class="select rounded-full mb-4 mt-2 w-full bg-[#f4f5f7] text-gray-500"
+                onchange="this.classList.remove('text-gray-500'); this.classList.add('text-black');">
+                <option disabled selected class="">Select back</option>
+                <option>AB Bank</option>
+                <option>Dhaka Bank</option>
+                <option>City Bank</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-black opacity-70">Biller Account Number</label>
+              <input type="text" placeholder="Enter account number"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Amount to Add</label>
+              <input id="amount-add" type="text" placeholder="Add Amount to pay"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Pin Number</label>
+              <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
+                class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Pay Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Transaction History -->
+      <div id="transaction-history-parent" class="p-6 hidden">
+        <p class="font-semibold mb-3">Transaction History</p>
+        <div class="bg-white p-6 rounded-2xl">
+          <div>
+            <div>
+              <label class="text-black opacity-70">Select A Bank</label>
+              <select id="bank" class="select rounded-full mb-4 mt-2 w-full bg-[#f4f5f7] text-gray-500"
+                onchange="this.classList.remove('text-gray-500'); this.classList.add('text-black');">
+                <option disabled selected class="">Select Bank</option>
+                <option>AB Bank</option>
+                <option>Dhaka Bank</option>
+                <option>City Bank</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-black opacity-70">Bank Account Number</label>
+              <input id="account-number" type="text" placeholder="Enter 11 digit account number"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>
+              <label class="">Amount to Add</label>
+              <input id="amount-add" type="text" placeholder="Add Amount to withdraw"
+                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <div>Select A Bank
+              <label class="">Pin Number</label>
+              <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
+                class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+            </div>
+            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Add Money
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./home.js"></script>
+</body>
+
+</html>

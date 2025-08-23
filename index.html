@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoo Project</title>
+  <!-- tailwind & DaisyUI Connect -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- CSS Connect -->
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body class="bg-[#F4F5F7] h-[100vh]  mx-auto flex flex-col justify-center items-center outfit-font">
+  <div class="max-w-md">
+    <div class="w-[320px] h-[140px] bg-cover bg-[url(./assets/bg.png)] mx-auto flex justify-center items-center">
+      <img src="./assets/Group.png" alt="">
+    </div>
+    <form class="p-8 bg-white rounded-3xl w-full">
+      <div>
+        <label class="">Mobile Number</label>
+        <input type="text" autocomplete="username" name="username" autocapitalize="none" placeholder="Enter your number"
+          id="username" spellcheck="false" class="block input rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+      </div>
+      <div>
+        <label class="">4 Digit Pin</label>
+        <input type="password" placeholder="Type here" id="pin-input"
+          class="block input rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
+      </div>
+      <button type="button" id="loginBtn" class="btn w-full bg-[#0874F2] rounded-full text-white">Login
+      </button>
+    </form>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
