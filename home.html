@@ -41,36 +41,36 @@
       </div>
       <!-- Card Design -->
       <div class=" grid grid-cols-3 gap-3">
-        <div id="add-money" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+        <div id="add-money" class="btn-form text-center border-1 border-gray-400 rounded-xl py-5 px-3">
           <img src="./assets/wallet1.png" alt="Icon" class="mx-auto mb-2">
-          <p id="add-money-text" class="text-gray-600 text-[14px]">Add Money</p>
+          <p id="add-money-text" class="btn-form-text text-gray-600 text-[14px]">Add Money</p>
         </div>
-        <div id="cash-out" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+        <div id="cash-out" class="btn-form text-center border-1 border-gray-400 rounded-xl py-5 px-3">
           <img src="./assets/send1.png" alt="Icon" class="mx-auto mb-2">
-          <p id="cash-out-text" class="text-gray-600 text-[14px]">Cashout</p>
+          <p id="cash-out-text" class="btn-form-text text-gray-600 text-[14px]">Cashout</p>
         </div>
-        <div id="transfer-money" class="text-center border-1 border-gray-400 rounded-xl py-5 px-1">
+        <div id="transfer-money" class="btn-form text-center border-1 border-gray-400 rounded-xl py-5 px-1">
           <img src="./assets/money1.png" alt="Icon" class="mx-auto mb-2">
-          <p id="transfer-money-text" class="text-gray-600 text-[14px]">Transfer Money</p>
+          <p id="transfer-money-text" class="btn-form-text text-gray-600 text-[14px]">Transfer Money</p>
         </div>
-        <div id="get-bonus" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+        <div id="get-bonus" class="btn-form text-center border-1 border-gray-400 rounded-xl py-5 px-3">
           <img src="./assets/bonus1.png" alt="Icon" class="mx-auto mb-2">
-          <p class="text-gray-600 text-[14px]">Get Bonus</p>
+          <p id="get-bonus-text" class="btn-form-text text-gray-600 text-[14px]">Get Bonus</p>
         </div>
-        <div id="pay-bill" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+        <div id="pay-bill" class="btn-form text-center border-1 border-gray-400 rounded-xl py-5 px-3">
           <img src="./assets/purse1.png" alt="Icon" class="mx-auto mb-2">
-          <p class="text-gray-600 text-[14px]">Pay Bill</p>
+          <p id="pay-bill-text" class="btn-form-text text-gray-600 text-[14px]">Pay Bill</p>
         </div>
-        <div id="transaction-history" class="text-center border-1 border-gray-400 rounded-xl py-5 px-3">
+        <div id="transaction-history" class="btn-form text-center border-1 border-gray-400 rounded-xl py-5 px-3">
           <img src="./assets/transaction1.png" alt="Icon" class="mx-auto mb-2">
-          <p class="text-gray-600 text-[14px]">Transactions</p>
+          <p id="transaction-history-text" class="btn-form-text text-gray-600 text-[14px]">Transactions</p>
         </div>
       </div>
     </div>
     <!-- bottom season -->
     <div>
       <!-- Latest Payment -->
-      <div id="latest-payment-parent" class="p-6">
+      <div id="latest-payment-parent" class="form p-6 hidden">
         <p class="font-semibold mb-3">latest Payment</p>
         <div class="bg-white p-6 rounded-2xl">
           <!-- <div>
@@ -105,7 +105,7 @@
         </div>
       </div>
       <!-- Add money -->
-      <div id="add-money-parent" class="p-6 hidden">
+      <div id="add-money-parent" class="form p-6 hidden">
         <p class="font-semibold mb-3">Add Money</p>
         <div class="bg-white p-6 rounded-2xl">
           <div>
@@ -140,7 +140,7 @@
         </div>
       </div>
       <!-- Cash Out -->
-      <div id="cash-out-parent" class="p-6 hidden">
+      <div id="cash-out-parent" class="form p-6 hidden">
         <p class="font-semibold mb-3">Cash Out</p>
         <div class="bg-white p-6 rounded-2xl">
           <div>
@@ -150,7 +150,7 @@
           </div>
           <div>
             <label class="">Amount</label>
-            <input id="amount-add" type="text" placeholder="Enter Amount to withdraw"
+            <input id="cash-amount" type="text" placeholder="Enter Amount to withdraw"
               class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
           </div>
           <div>
@@ -158,12 +158,12 @@
             <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
               class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
           </div>
-          <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Withdraw Money
+          <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-cash-out">Withdraw Money
           </button>
         </div>
       </div>
       <!-- Transfer Money -->
-      <div id="transfer-money-parent" class="p-6 hidden">
+      <div id="transfer-money-parent" class="form p-6 hidden">
         <p class="font-semibold mb-3">Transfer Money</p>
         <div class="bg-white p-6 rounded-2xl">
           <div>
@@ -188,7 +188,7 @@
         </div>
       </div>
       <!-- Get Bonus -->
-      <div id="get-bonus-parent" class="p-6 hidden">
+      <div id="get-bonus-parent" class="form p-6 hidden">
         <p class="font-semibold mb-3">Get Bonus</p>
         <div class="bg-white p-6 rounded-2xl">
           <div>
@@ -203,7 +203,7 @@
         </div>
       </div>
       <!-- Pay Bill -->
-      <div id="pay-bill-parent" class="p-6 hidden">
+      <div id="pay-bill-parent" class="form p-6 hidden">
         <p class="font-semibold mb-3">Pay Bill</p>
         <div class="bg-white p-6 rounded-2xl">
           <div>
@@ -238,44 +238,19 @@
         </div>
       </div>
       <!-- Transaction History -->
-      <div id="transaction-history-parent" class="p-6 hidden">
-        <p class="font-semibold mb-3">Transaction History</p>
-        <div class="bg-white p-6 rounded-2xl">
-          <div>
-            <div>
-              <label class="text-black opacity-70">Select A Bank</label>
-              <select id="bank" class="select rounded-full mb-4 mt-2 w-full bg-[#f4f5f7] text-gray-500"
-                onchange="this.classList.remove('text-gray-500'); this.classList.add('text-black');">
-                <option disabled selected class="">Select Bank</option>
-                <option>AB Bank</option>
-                <option>Dhaka Bank</option>
-                <option>City Bank</option>
-              </select>
-            </div>
-            <div>
-              <label class="text-black opacity-70">Bank Account Number</label>
-              <input id="account-number" type="text" placeholder="Enter 11 digit account number"
-                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
-            </div>
-            <div>
-              <label class="">Amount to Add</label>
-              <input id="amount-add" type="text" placeholder="Add Amount to withdraw"
-                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
-            </div>
-            <div>Select A Bank
-              <label class="">Pin Number</label>
-              <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
-                class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
-            </div>
-            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Add Money
-            </button>
-          </div>
+      <div id="transaction-history-parent" class="form p-6">
+        <div class="flex justify-between items-start">
+          <p class="font-semibold mb-3">Transaction History</p>
+          <p class="text-gray-500">View all</p>
+        </div>
+        <div class="bg-white border border-gray-300 p-6 rounded-xl">
+         <div class=""><img src="./assets/" alt=""></div>
         </div>
       </div>
     </div>
   </section>
 
-  <script src="./home.js"></script>
+  <script src="./home-update.js"></script>
 </body>
 
 </html>

@@ -1,30 +1,37 @@
 const fixedPin = 1234;
 
+//add money
 document.getElementById('btn-add-money').addEventListener('click', e => {
   e.preventDefault();
   const bank = document.getElementById('bank').value;
   const accountNumber = document.getElementById('account-number').value;
-  const amountAdd = document.getElementById('amount-add').value;
+  const amount = document.getElementById('add-amount');
   const addPin = document.getElementById('add-pin').value;
   const availableBalance = parseInt(
     document.getElementById('available-balance').innerText
   );
   if (accountNumber.length < 11 || accountNumber.length > 11) {
-    alert('Invalid account number');
-    return;
+    return alert('Invalid account number');
   }
-  // Extra use this condition check input amount validation
-  if (amountAdd == '' || isNaN(amountAdd)) {
-    alert('Not submit amount');
+  if (amount == '' || isNaN(amount)) {
+    return alert('Not submit amount');
   }
-  if (addPin != fixedPin) {
-    alert('Wrong pin number');
-    return;
+  if (parseInt(addPin) != fixedPin) {
+    return alert('Wrong pin number');
   }
-  //Balance Sum
-  const totalAvailableAmount = availableBalance + amountAdd;
-  console.log(totalAvailableAmount);
-  // Balance Add
+  const totalAvailableAmount = availableBalance + amount;
+  document.getElementById('available-balance').innerText = totalAvailableAmount;
+});
+
+//cash out
+document.getElementById('btn-cash-out').addEventListener('click', e => {
+  e.preventDefault();
+  const amount = parseInt(document.getElementById('cash-amount').value);
+  const availableBalance = parseInt(
+    document.getElementById('available-balance').innerText
+  );
+  console.log(amount, availableBalance);
+  const totalAvailableAmount = availableBalance - amount;
   document.getElementById('available-balance').innerText = totalAvailableAmount;
 });
 
