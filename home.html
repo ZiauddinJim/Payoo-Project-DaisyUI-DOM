@@ -28,9 +28,10 @@
           <p class="text-gray-500">Available Balance</p>
         </div>
       </div>
-      <button class="btn text-gray-500 rounded-lg"><i
-          class="fa-solid fa-arrow-right-from-bracket rotate-180 text-[#666768]"></i>Log
-        Out</button>
+      <button id="logout" class="btn text-gray-500 rounded-lg">
+        <i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-[#666768]"></i>
+        Log Out
+      </button>
     </div>
     <!-- Card season -->
     <div class=" bg-white rounded-b-xl p-6">
@@ -70,39 +71,11 @@
     <!-- bottom season -->
     <div>
       <!-- Latest Payment -->
-      <div id="latest-payment-parent" class="form p-6 hidden">
+      <div id="latest-payment-parent" class="form p-6">
         <p class="font-semibold mb-3">latest Payment</p>
         <div class="bg-white p-6 rounded-2xl">
-          <!-- <div>
-            <div>
-              <label class="text-black opacity-70">Select A Bank</label>
-              <select id="bank" class="select rounded-full mb-4 mt-2 w-full bg-[#f4f5f7] text-gray-500"
-                onchange="this.classList.remove('text-gray-500'); this.classList.add('text-black');">
-                <option disabled selected class="">Select Bank</option>
-                <option>AB Bank</option>
-                <option>Dhaka Bank</option>
-                <option>City Bank</option>
-              </select>
-            </div>
-            <div>
-              <label class="text-black opacity-70">Bank Account Number</label>
-              <input id="account-number" type="text" placeholder="Enter 11 digit account number"
-                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
-            </div>
-            <div>
-              <label class="">Amount to Add</label>
-              <input id="amount-add" type="text" placeholder="Add Amount to withdraw"
-                class="input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
-            </div>
-            <div>
-              <label class="">Pin Number</label>
-              <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
-                class=" input w-full rounded-full mb-4 mt-2 bg-[#f4f5f7]" />
-            </div>
-            <button class="btn w-full bg-[#0874F2] rounded-full text-white" id="btn-add-money">Add Money
-            </button>
-          </div> -->
-        </div>
+          <h1 class="text-center">No Transaction</h1>
+          </div>
       </div>
       <!-- Add money -->
       <div id="add-money-parent" class="form p-6 hidden">
@@ -238,13 +211,13 @@
         </div>
       </div>
       <!-- Transaction History -->
-      <div id="transaction-history-parent" class="form p-6">
+      <div id="transaction-history-parent" class="form p-6 hidden">
         <div class="flex justify-between items-start">
           <p class="font-semibold mb-3">Transaction History</p>
           <p class="text-gray-500">View all</p>
         </div>
-        <div class="bg-white border border-gray-300 p-6 rounded-xl">
-         <div class=""><img src="./assets/" alt=""></div>
+        <!-- card create -->
+        <div id="transaction-container"> 
         </div>
       </div>
     </div>

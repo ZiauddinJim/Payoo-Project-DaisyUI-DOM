@@ -38,21 +38,68 @@ document.getElementById('btn-add-money').addEventListener('click', e => {
   if (pinFixed !== pin) {
     return alert('Wrong pin number');
   }
+  if (amount <= 0) {
+    return alert('invalid amount');
+  }
   const totalAmount = amount + availableBalance;
   setInnerText(totalAmount);
+
   const data = {
-    name: "Add money",
-    date: new data t
-  }
+    name: 'Add Money',
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(data);
+  console.log(transactionData);
 });
+
 // Cash Out Feature
 document.getElementById('btn-cash-out').addEventListener('click', e => {
   e.preventDefault();
   const amount = number('cash-amount');
   const availableBalance = getInnerText('available-balance');
+  if (amount <= 0 || amount > availableBalance) {
+    return alert('invalid amount');
+  }
   const totalAmount = availableBalance - amount;
   setInnerText(totalAmount);
+
+  const data = {
+    name: 'Cash Out',
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(data);
 });
+
+//Transaction History
+document.getElementById('transaction-history').addEventListener('click', () => {
+  const transactionContainer = document.getElementById('transaction-container');
+  transactionContainer.innerText = '';
+  for (const data of transactionData) {
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div class="bg-white border flex justify-between items-center border-gray-300 py-3 px-4 rounded-xl">
+            <div class="flex">
+              <div class="p-3 w-10 h-10 rounded-full bg-[#F4F5F7]">
+                <img src="./assets/wallet1.png" alt="">
+              </div>
+              <div class="ml-2">
+                <p class="font-semibold">${data.name}</p>
+                <p class="text-gray-500">${data.date}</p>
+              </div>
+            </div>
+            <div>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+    `;
+    transactionContainer.appendChild(div);
+  }
+});
+//Logout feature
+document.getElementById('logout').addEventListener('click', () => {
+  document.location.href='index.html';
+});
+
 
 //toggle function
 const toggleHandler = (id, id1, id2) => {
